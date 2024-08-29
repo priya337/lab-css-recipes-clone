@@ -1,55 +1,137 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Helvetica, sans-serif;;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    line-height: 1.6;
 }
 
-#main-header {
+.header-image {
+    position: relative;
     text-align: center;
-    padding: 20px;
-    background-color: #ffcc99;
+    color: white;
 }
 
-h1 {
-    margin: 0;
-    color: #333;
-}
-
-#hero-section img {
+.header-image img {
     width: 100%;
     height: auto;
 }
 
-#recipe-info-section {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+.title-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
 }
 
-#recipe-info-section img {
-    max-width: 45%;
-    height: auto;
+.title-overlay h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: normal;
+    display: inline;
+    white-space: nowrap;
 }
 
-#prep-steps-section {
-    margin: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.custom-line {
+    width: 90%; /* Full width */
+    max-width: 90%; /* Remove max width constraint */
+    margin: 10px auto; /* Minimal margin */
+    border: 0;
+    height: 1px;
+    background: #ccc; /* Light grey color for the line */
 }
 
-#prep-steps-section h2 {
-    margin-top: 0;
-    color: #333;
+.intro-text {
+    padding: 10px 5%;  /* Minimal padding */
+    text-align: justify;  
+    font-size: 1.7em;  
+    line-height: 1.8;  
+    color: #333;  
+    max-width: 100%;  /* Remove max-width to allow full-width */
+    margin: 0 auto;  
 }
 
-#prep-steps-section ol {
-    padding-left: 20px;
+.intro-text p {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.6em; /* Reduced margin between paragraphs */
 }
 
-#prep-steps-section li {
+.intro-text p:first-child,
+.intro-text p:nth-child(2) {
+    font-size: 1.1em;
+    word-spacing: 0.05em;
+}
+
+.intro-text p:last-child {
+    font-size: 1.3em;
+    word-spacing: 0.1em;
+    letter-spacing: 0.03em;
+}
+
+.recipe-info {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.ingredients-section {
+    max-width: 100%; /* Full width */
+    margin: 0; /* Remove side margins */
+    padding: 10px 5%; /* Minimal padding */
+}
+
+.ingredients-section h2 {
+    font-size: 1.5em;
     margin-bottom: 10px;
-    color: #666;
 }
+
+.ingredients-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredients-section ul li {
+    padding: 5px 0;
+    font-size: 1.1em;
+}
+
+.cooking-info {
+    max-width: 100%; /* Full width */
+    margin: 0 auto; /* Center the image */
+    text-align: center;
+    padding: 10px 5%; /* Minimal padding */
+}
+
+.directions-section {
+    max-width: 100%; /* Full width */
+    margin: 50; /* Remove side margins */
+    padding: 10px 5%; /* Minimal padding */
+    margin-bottom: 50px
+}
+
+.directions-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.directions-section ol {
+    padding-left: 10px; /* Reduced padding on the left */
+    list-style: none; /* Remove default list style */
+    counter-reset: list-counter; /* Reset the counter */
+}
+
+.directions-section ol li {
+    margin-bottom: 10px;
+    counter-increment: list-counter; /* Increment the counter */
+    position: relative; /* For custom number positioning */
+    padding-left: 20px; /* Space for the number */
+}
+
+.directions-section ol li::before {
+    content: counter(list-counter) ")"; /* Add custom numbering format */
+    position: absolute;
+    left: 0; /* Position the number */
+    top: 0;
+}
+
